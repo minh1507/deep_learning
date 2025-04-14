@@ -45,7 +45,6 @@ def train_and_log(df, chunk_index, run_name_suffix="", experiment_name="TextClas
             if isinstance(metrics, dict):
                 mlflow.log_metric(f"f1_{label}", metrics.get("f1-score", 0))
 
-        # Ghi đè model duy nhất vào models/latest/
         model_path = "models/latest"
         if os.path.exists(model_path):
             shutil.rmtree(model_path)
