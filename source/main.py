@@ -7,31 +7,26 @@ import os
 import pickle
 from torch.nn.utils.rnn import pad_sequence
 
-# ----- CẤU HÌNH -----
 app = Flask(__name__)
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 MODEL_PATH = os.path.join("models", "latest")
 MAX_LEN = 100
 
-# ----- LOAD MODEL -----
 model = mlflow.pytorch.load_model(MODEL_PATH)
 model.eval()
 
-# ----- LOAD VOCAB + LABEL ENCODER -----
 with open(os.path.join(MODEL_PATH, "vocab.pkl"), "rb") as f:
     vocab = pickle.load(f)
 
 with open(os.path.join(MODEL_PATH, "label_encoder.pkl"), "rb") as f:
     label_encoder = pickle.load(f)
 
-# ----- TOKENIZER -----
 def tokenize(text):
     return re.findall(r"\b\w+\b", text.lower())
 
 def encode_text(text):
     return [vocab.get(token, vocab["<UNK>"]) for token in tokenize(text)]
 
-# ----- API ENDPOINTS -----
 @app.route("/predict", methods=["POST"])
 def predict():
     try:
