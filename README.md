@@ -10,7 +10,9 @@ pip install -r requirements.txt
 python main.py
 
 # Bước 2: Huấn luyện mô hình
-python train.py
+Test nhỏ với 500 dòng đầu	python train/main.py --mode test
+Train chunk bất kỳ (ví dụ 0)	python train/main.py --mode chunk --chunk 0
+Train toàn bộ từ chunk 1 đến 9	python train/main.py --mode full
 
 # Bước 3: Chạy Flask API
-python app.py
+python source/main.py
