@@ -10,7 +10,6 @@ def normalize_label(label):
     label = label.encode("ascii", errors="ignore").decode("utf-8")
     return label
 
-# ⚠️ Bổ sung config: ag_news
 dataset = load_dataset("cestwc/text_classification", "ag_news")["train"]
 df = pd.DataFrame(dataset.to_dict())
 df = df.rename(columns={"content": "text"})

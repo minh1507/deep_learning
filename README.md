@@ -6,8 +6,8 @@ pip install -r requirements.txt
 # Cài thư viện
 pip install -r requirements.txt
 
-# Bước 1: Chia dữ liệu
-python split_dataset.py
+# Bước 1: crawl data
+python main.py
 
 # Bước 2: Huấn luyện mô hình
 python train.py

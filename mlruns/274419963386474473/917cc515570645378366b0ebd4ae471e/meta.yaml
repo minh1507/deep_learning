@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Git/deep_learning/mlruns/274419963386474473/917cc515570645378366b0ebd4ae471e/artifacts
+end_time: 1744637289553
+entry_point_name: ''
+experiment_id: '274419963386474473'
+lifecycle_stage: active
+run_id: 917cc515570645378366b0ebd4ae471e
+run_name: chunk_0_test
+run_uuid: 917cc515570645378366b0ebd4ae471e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1744637286327
+status: 3
+tags: []
+user_id: minh
