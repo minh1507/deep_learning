@@ -16,3 +16,5 @@ Train toàn bộ từ chunk 1 đến 9	python train/main.py --mode full
 
 # Bước 3: Chạy Flask API
 python source/main.py
+
+# Dùng CURL trong file CURL.md patse vào postman để test thử
